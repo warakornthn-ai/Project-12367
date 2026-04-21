@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow">
+    <div class="card-body">
+
+        <h3 class="mb-3">📅 จองคิวรักษา</h3>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label>Pet</label>
+                {{ form.pet }}
+            </div>
+
+            <div class="mb-3">
+                <label>Vet</label>
+                {{ form.vet }}
+            </div>
+
+            <div class="mb-3">
+                <label>Appointment date</label>
+                {{ form.appointment_date }}
+            </div>
+
+            <div class="mb-3">
+                <label>Status</label>
+                {{ form.status }}
+            </div>
+
+            <div class="mb-3">
+                <label>Note</label>
+                {{ form.note }}
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">💾 บันทึก</button>
+
+        </form>
+
+        <a href="/" class="btn btn-secondary w-100 mt-2">⬅ กลับหน้าแรก</a>
+
+    </div>
+</div>
+
+{% endblock %}
